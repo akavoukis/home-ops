@@ -51,7 +51,7 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: hello-ca-tls
+  name: self-ca-tls
   namespace: networking
 spec:
   # name of the tls secret to store
@@ -60,7 +60,7 @@ spec:
   isCA: true
   issuerRef:
     # issuer created in step 1
-    name: my-ca-issuer
+    name: self-ca-issuer
     kind: Issuer
   commonName: "${LOCAL_DOMAIN}"
   dnsNames:
