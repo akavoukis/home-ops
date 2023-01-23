@@ -44,14 +44,42 @@ apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: my-ca-issuer
-  namespace: sandbox
-spec:
-  ca:
-    secretName: root-secret
----
-apiVersion: cert-manager.io/v1
-kind: ClusterIssuer
-metadata:
-  name: selfsigned-issuer
+  namespace: networking
 spec:
   selfSigned: {}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: hello-ca-tls
+  namespace: networking
+spec:
+  # name of the tls secret to store
+  # the generated certificate/key pair
+  secretName: self-tls-ca-key-pair
+  isCA: true
+  issuerRef:
+    # issuer created in step 1
+    name: my-ca-issuer
+    kind: Issuer
+  commonName: "${LOCAL_DOMAIN}"
+  dnsNames:
+  # one or more fully-qualified domain name
+  # can be defined here
+    - ${LOCAL_DOMAIN}
+---
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: hello-deployment-tls
+  namespace: networking
+spec:
+  ca:
+    secretName: self-tls-ca-key-pair
+#---
+#apiVersion: cert-manager.io/v1
+#kind: ClusterIssuer
+#metadata:
+#  name: selfsigned-issuer
+#spec:
+#  selfSigned: {}
