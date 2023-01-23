@@ -41,45 +41,27 @@ spec:
             - "${SECRET_DOMAIN}"
 ---
 apiVersion: cert-manager.io/v1
-kind: Issuer
+kind: ClusterIssuer
 metadata:
-  name: my-ca-issuer
-  namespace: networking
+  name: selfsigned
 spec:
   selfSigned: {}
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: self-ca-tls
-  namespace: networking
+  name: ca-cert
+  namespace: cert-manager
 spec:
-  # name of the tls secret to store
-  # the generated certificate/key pair
-  secretName: self-tls-ca-key-pair
   isCA: true
+  duration: 43800h # 5 years
+  commonName: ${LOCAL_DOMAIN}
+  secretName: ca-key-pair
+  privateKey:
+    algorithm: RSA
+    encoding: PKCS8
+    size: 4096
   issuerRef:
-    # issuer created in step 1
-    name: self-ca-issuer
-    kind: Issuer
-  commonName: "${LOCAL_DOMAIN}"
-  dnsNames:
-  # one or more fully-qualified domain name
-  # can be defined here
-    - ${LOCAL_DOMAIN}
----
-apiVersion: cert-manager.io/v1
-kind: Issuer
-metadata:
-  name: self-deployment-tls
-  namespace: networking
-spec:
-  ca:
-    secretName: self-tls-ca-key-pair
-#---
-#apiVersion: cert-manager.io/v1
-#kind: ClusterIssuer
-#metadata:
-#  name: selfsigned-issuer
-#spec:
-#  selfSigned: {}
+    name: selfsigned
+    kind: ClusterIssuer
+    group: cert-manager.io
