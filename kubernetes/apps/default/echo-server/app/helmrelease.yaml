@@ -71,6 +71,10 @@ spec:
         tls:
           - hosts:
               - *host
+          - hosts:
+              - &host "{{ .Release.Name }}.${LOCAL_DOMAIN}"
+            secretName: akavoukis.lan-tls
+
     resources:
       requests:
         cpu: 5m
