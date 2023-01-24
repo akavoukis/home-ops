@@ -72,7 +72,7 @@ spec:
           - hosts:
               - *host
           - hosts:
-              - &host "{{ .Release.Name }}.${LOCAL_DOMAIN}"
+              - "{{ .Release.Name }}.${LOCAL_DOMAIN}"
             secretName: akavoukis.lan-tls
 
     resources:
