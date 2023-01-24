@@ -73,7 +73,7 @@ spec:
               - *host
           - hosts:
               - *host-local
-            secretName: "networking/${LOCAL_DOMAIN/./-}-tls"
+            secretName: "${LOCAL_DOMAIN/./-}-tls"
     resources:
       requests:
         cpu: 5m
