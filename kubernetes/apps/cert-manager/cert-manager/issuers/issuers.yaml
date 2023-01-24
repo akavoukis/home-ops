@@ -55,7 +55,7 @@ metadata:
 spec:
   isCA: true
   duration: 43800h # 5 years
-  commonName: ${LOCAL_DOMAIN}
+  commonName: "${LOCAL_DOMAIN}"
   secretName: ca-key-pair
   privateKey:
     algorithm: RSA
@@ -64,4 +64,12 @@ spec:
   issuerRef:
     name: selfsigned
     kind: ClusterIssuer
-    group: cert-manager.io
+    group: "${LOCAL_DOMAIN}"
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: cluster-issuer-from-ca
+spec:
+  ca:
+    secretName: ca-key-pair # this is the previously created secret
