@@ -40,10 +40,12 @@ spec:
         cert-manager.io/cluster-issuer: letsencrypt-staging
         hajimari.io/icon: mdi:kubernetes
       hosts:
+        - &host-local "kubernetes.${LOCAL_DOMAIN}"
         - &host "kubernetes.${SECRET_DOMAIN}"
       tls:
         - hosts:
             - *host
+            - *host-local
           secretName: kubernetes-dashboard-tls
     metricsScraper:
       enabled: true
