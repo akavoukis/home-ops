@@ -42,7 +42,7 @@ spec:
   dnsNames:
     - "${LOCAL_DOMAIN}"
     - "*.${LOCAL_DOMAIN}"
-  secretName: "${LOCAL_DOMAIN}-tls"
+  secretName: "${LOCAL_DOMAIN/./-}-tls"
   privateKey:
     algorithm: RSA
     encoding: PKCS8

@@ -73,7 +73,7 @@ spec:
               - *host
           - hosts:
               - *host-local
-            secretName: "akavoukis.lan-tls"
+            secretName: "networking/${LOCAL_DOMAIN/./-}-tls"
     resources:
       requests:
         cpu: 5m
