@@ -71,10 +71,9 @@ spec:
         tls:
           - hosts:
               - *host
-            secretName: networking/${SECRET_DOMAIN/./-}-production-tls
           - hosts:
               - *host-local
-            secretName: networking/akavoukis.lan-tls
+            secretName: "akavoukis.lan-tls"
     resources:
       requests:
         cpu: 5m
