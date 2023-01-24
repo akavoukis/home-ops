@@ -41,7 +41,7 @@ spec:
   commonName: "${LOCAL_DOMAIN}"
   dnsNames:
     - "${LOCAL_DOMAIN}"
-    - "*.{LOCAL_DOMAIN}"
+    - "*.${LOCAL_DOMAIN}"
   secretName: "${LOCAL_DOMAIN}-tls"
   privateKey:
     algorithm: RSA
