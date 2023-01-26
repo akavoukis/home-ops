@@ -5,8 +5,8 @@ metadata:
   name: nfs-csi
 provisioner: nfs.csi.k8s.io
 parameters:
-  server: ${NFS_SERVER_ADDRESS}
-  share: ${NFS_MOUNT_PATH}
+  server: "${NFS_SERVER_ADDRESS}"
+  share: "${NFS_MOUNT_PATH}"
 reclaimPolicy: Retain
 volumeBindingMode: Immediate
 mountOptions:
