@@ -87,6 +87,10 @@ spec:
       config:
         enabled: true
         existingClaim: tvheadend-config
+      dvb:
+        enabled: true
+        type: hostPath
+        hostPath: /dev/dvb
       # recordings:
       #   enabled: true
       #   existingClaim: media-v2
