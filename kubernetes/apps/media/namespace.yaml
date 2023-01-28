@@ -5,4 +5,4 @@ metadata:
   name: media
   labels:
     goldilocks.fairwinds.com/enabled: "true"
-    component.kutara.io/postgres-secrets: "true"
+    kustomize.toolkit.fluxcd.io/prune: disabled
