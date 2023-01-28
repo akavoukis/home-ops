@@ -75,14 +75,14 @@ spec:
       config:
         enabled: true
         existingClaim: tvheadend-config-v2
-      recordings:
-        enabled: true
-        existingClaim: media-v2
-        mountPath: /recordings
-      timeshift:
-        enabled: true
-        type: emptyDir
-        mountPath: /timeshift
+      # recordings:
+      #   enabled: true
+      #   existingClaim: media-v2
+      #   mountPath: /recordings
+      # timeshift:
+      #   enabled: true
+      #   type: emptyDir
+      #   mountPath: /timeshift
     resources:
       requests:
         # gpu.intel.com/i915: 1
