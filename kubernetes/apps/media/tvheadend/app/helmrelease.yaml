@@ -37,6 +37,8 @@ spec:
         enabled: true
         ingressClassName: "nginx"
         annotations:
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+          hajimari.io/icon: video-input-antenna
           cert-manager.io/cluster-issuer: letsencrypt-production
           nginx.ingress.kubernetes.io/configuration-snippet: |
             proxy_set_header Host $host;
