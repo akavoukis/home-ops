@@ -32,10 +32,12 @@ spec:
     global:
       nameOverride: *app
     image:
-      repository: ghcr.io/onedr0p/tvheadend
-      tag: 4.3.9934@sha256:c6200dfff00b846f71359d26c16a3883a0110a6a15e2169d60813966bfc0dcb9
+      repository: ghcr.io/linuxserver/tvheadend
+      tag: version-c9a156a2
     env:
       TZ: ${TIMEZONE}
+      PUID: "1000"
+      PGID: "1000"
     service:
       main:
         ports:
@@ -72,9 +74,6 @@ spec:
         tls:
           - hosts:
               - *host
-          - hosts:
-              - *host-local
-            secretName: "${LOCAL_DOMAIN/./-}-tls"
     securityContext:
       seLinuxOptions:
         level: s0
@@ -102,6 +101,8 @@ spec:
       #   enabled: true
       #   type: emptyDir
       #   mountPath: /timeshift
+    nodeSelector:
+      worker: yes
     resources:
       requests:
         # gpu.intel.com/i915: 1
