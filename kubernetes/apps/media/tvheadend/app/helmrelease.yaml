@@ -49,6 +49,9 @@ spec:
         ingressClassName: "nginx"
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt-production
+          hajimari.io/enable: "false"
+          hajimari.io/icon: "television"
+          hajimari.io/group: "media"
           nginx.ingress.kubernetes.io/configuration-snippet: |
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
@@ -86,6 +89,10 @@ spec:
       config:
         enabled: true
         existingClaim: tvheadend-config
+      dvb:
+        enabled: true
+        type: hostPath
+        hostPath: /dev/dvb
       # recordings:
       #   enabled: true
       #   existingClaim: media-v2
