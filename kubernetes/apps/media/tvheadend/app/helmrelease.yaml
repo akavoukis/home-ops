@@ -10,12 +10,11 @@ spec:
   interval: 5m
   chart:
     spec:
-      # renovate: registryUrl=https://k8s-at-home.com/charts/
-      chart: tvheadend
-      version: 5.4.2
+      chart: app-template
+      version: 1.2.1
       sourceRef:
         kind: HelmRepository
-        name: k8s-at-home-charts
+        name: bjw-s
         namespace: flux-system
       interval: 15m
   maxHistory: 3
@@ -33,12 +32,10 @@ spec:
     global:
       nameOverride: *app
     image:
-      repository: ghcr.io/linuxserver/tvheadend
-      tag: version-eb59284b
+      repository: ghcr.io/onedr0p/tvheadend
+      tag: 4.3.9934@sha256:c6200dfff00b846f71359d26c16a3883a0110a6a15e2169d60813966bfc0dcb9
     env:
       TZ: ${TIMEZONE}
-      PUID: "1001"
-      PGID: "1001"
     service:
       main:
         ports:
@@ -82,10 +79,13 @@ spec:
       seLinuxOptions:
         level: s0
     podSecurityContext:
+      runAsUser: 568
+      runAsGroup: 568
+      fsGroup: 568
+      fsGroupChangePolicy: "OnRootMismatch"
       supplementalGroups:
         - 44
         - 109
-        - 100
     persistence:
       config:
         enabled: true
@@ -102,8 +102,6 @@ spec:
       #   enabled: true
       #   type: emptyDir
       #   mountPath: /timeshift
-    nodeSelector:
-      worker: yes
     resources:
       requests:
         # gpu.intel.com/i915: 1
