@@ -104,8 +104,6 @@ spec:
       #   enabled: true
       #   type: emptyDir
       #   mountPath: /timeshift
-    nodeSelector:
-      worker: yes
     resources:
       requests:
         # gpu.intel.com/i915: 1
