@@ -25,8 +25,8 @@ spec:
       tag: version-c9a156a2
     env:
       TZ: ${TIMEZONE}
-      PUID: "568"
-      PGID: "568"
+      PUID: "1000"
+      PGID: "1000"
     service:
       main:
         ports:
@@ -67,9 +67,9 @@ spec:
       seLinuxOptions:
         level: s0
     podSecurityContext:
-      runAsUser: 568
-      runAsGroup: 568
-      fsGroup: 568
+        #runAsUser: 568
+        #runAsGroup: 568
+        #fsGroup: 568
       fsGroupChangePolicy: "OnRootMismatch"
       supplementalGroups:
         - 44
@@ -77,7 +77,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: tvheadend-config-v6
+        existingClaim: tvheadend-config-v7
       dvb:
         enabled: true
         type: hostPath
