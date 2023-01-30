@@ -76,12 +76,9 @@ spec:
       seLinuxOptions:
         level: s0
     podSecurityContext:
-      #runAsUser: 568
-      #runAsGroup: 568
-      #fsGroup: 568
-      runAsUser: 1000
-      runAsGroup: 1000
-      fsGroup: 1000
+      runAsUser: 568
+      runAsGroup: 568
+      fsGroup: 568
       fsGroupChangePolicy: "OnRootMismatch"
       supplementalGroups:
         - 44
@@ -89,7 +86,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: tvheadend-config-v4
+        existingClaim: tvheadend-config-v5
       dvb:
         enabled: true
         type: hostPath
