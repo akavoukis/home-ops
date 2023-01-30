@@ -25,8 +25,8 @@ spec:
       tag: version-c9a156a2
     env:
       TZ: ${TIMEZONE}
-      PUID: "1000"
-      PGID: "1000"
+      PUID: "568"
+      PGID: "568"
     service:
       main:
         ports:
