@@ -77,7 +77,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: tvheadend-config-v5
+        existingClaim: tvheadend-config-v6
       dvb:
         enabled: true
         type: hostPath
