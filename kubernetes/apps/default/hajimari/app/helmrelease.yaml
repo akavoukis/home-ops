@@ -39,6 +39,7 @@ spec:
       defaultEnable: true
       namespaceSelector:
         matchNames:
+          - media
           - default
     ingress:
       main:
