@@ -115,6 +115,7 @@ spec:
                 cpu: 100m
                 memory: 1Gi
               limits:
+                cpu: 200m
                 memory: 2Gi
         storageClass:
           enabled: true
@@ -151,6 +152,7 @@ spec:
                 cpu: 100m
                 memory: 1Gi
               limits:
+                cpu: 200m
                 memory: 2Gi
             instances: 1
           healthCheck:
