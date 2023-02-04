@@ -112,10 +112,10 @@ spec:
             activeStandby: true
             resources:
               requests:
-                cpu: 100m
+                cpu: 10m
                 memory: 1Gi
               limits:
-                cpu: 200m
+                cpu: 20m
                 memory: 2Gi
         storageClass:
           enabled: true
@@ -149,10 +149,10 @@ spec:
             port: 80
             resources:
               requests:
-                cpu: 100m
+                cpu: 10m
                 memory: 1Gi
               limits:
-                cpu: 200m
+                cpu: 20m
                 memory: 2Gi
             instances: 1
           healthCheck:
