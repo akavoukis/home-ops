@@ -28,8 +28,10 @@ spec:
     keepHistory: false
   values:
     monitoring:
-      enabled: true
-      createPrometheusRules: true
+      # TODO enable monitoring enabled: true
+      enabled: false
+      # createPrometheusRules: true
+      createPrometheusRules: false
     ingress:
       dashboard:
         ingressClassName: nginx
