@@ -39,6 +39,7 @@ spec:
       limits:
         cpu: 10m
         memory: 256Mi
+    hostpathRequiresPrivileged: true
     csi:
       csiRBDProvisionerResource: |
         - name : csi-provisioner

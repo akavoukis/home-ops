@@ -26,6 +26,9 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
+  dependsOn:
+    - name: rook-ceph-operator
+      namespace: rook-ceph
   values:
     monitoring:
       # TODO enable monitoring enabled: true
@@ -38,6 +41,7 @@ spec:
         annotations:
           hajimari.io/appName: "Rook"
           hajimari.io/icon: mdi:chess-rook
+          hajimari.io/enable: "true"
         hosts:
           - host: &host-local "{{ .Release.Name }}.${LOCAL_DOMAIN}"
             path: /
@@ -49,7 +53,7 @@ spec:
           - hosts:
               - *host-local
     toolbox:
-      enabled: true
+      enabled: false
     configOverride: |
       [global]
       bdev_enable_discard = true
