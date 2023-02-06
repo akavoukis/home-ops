@@ -72,14 +72,14 @@ spec:
       supplementalGroups:
         - 44
         - 109
-    #volumeClaimTemplates:
-    #  - name: config
-    #    mountPath: /config
-    #    accessMode: ReadWriteOnce
-    #    size: 1Gi
-    #    storageClass: ceph-block
-    #    labels:
-    #      snapshot.home.arpa/enabled: "true"
+    volumeClaimTemplates:
+      - name: config
+        mountPath: /config
+        accessMode: ReadWriteOnce
+        size: 1Gi
+        storageClass: ceph-block
+        labels:
+          snapshot.home.arpa/enabled: "true"
     persistence:
       dvb:
         enabled: true
