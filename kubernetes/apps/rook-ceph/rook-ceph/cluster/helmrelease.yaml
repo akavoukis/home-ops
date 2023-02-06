@@ -59,6 +59,8 @@ spec:
       bdev_enable_discard = true
       bdev_async_discard = true
     cephClusterSpec:
+      mon:
+        count: 2
       network:
         provider: host
         connections:
