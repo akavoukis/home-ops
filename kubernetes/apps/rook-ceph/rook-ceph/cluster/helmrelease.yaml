@@ -79,7 +79,7 @@ spec:
         config:
           osdsPerDevice: "1"
         nodes:
-          - name: server-pc.lan
+          - name: server-pc
             directories:
               - path: /rook-storage
     cephBlockPools:
