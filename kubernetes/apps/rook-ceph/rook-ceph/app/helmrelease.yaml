@@ -94,10 +94,10 @@ spec:
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 256Mi
-              cpu: 10m
+              cpu: 20m
       # -- CEPH CSI RBD plugin resource requirement list
       # @default -- see values.yaml
       csiRBDPluginResource: |
@@ -105,10 +105,10 @@ spec:
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 256Mi
-              cpu: 10m
+              cpu: 20m
         - name : csi-rbdplugin
           resource:
             requests:
@@ -121,10 +121,10 @@ spec:
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 25m
             limits:
               memory: 256Mi
-              cpu: 10m
+              cpu: 50m
 
       # -- CEPH CSI CephFS provisioner resource requirement list
       # @default -- see values.yaml
@@ -173,10 +173,10 @@ spec:
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 25m
             limits:
               memory: 256Mi
-              cpu: 10m
+              cpu: 50m
 
       # -- CEPH CSI CephFS plugin resource requirement list
       # @default -- see values.yaml
@@ -185,10 +185,10 @@ spec:
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 25m
             limits:
               memory: 256Mi
-              cpu: 10m
+              cpu: 50m
         - name : csi-cephfsplugin
           resource:
             requests:
@@ -201,7 +201,7 @@ spec:
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 25m
             limits:
               memory: 256Mi
-              cpu: 10m
+              cpu: 50m
