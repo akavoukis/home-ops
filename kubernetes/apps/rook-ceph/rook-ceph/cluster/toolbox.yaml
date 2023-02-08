@@ -156,4 +156,4 @@ spec:
           tolerationSeconds: 5
       nodeSelector:
         kubernetes.io/arch: amd64
-        kubernetes.io/hostname: serber-pc
+        kubernetes.io/hostname: server-pc
