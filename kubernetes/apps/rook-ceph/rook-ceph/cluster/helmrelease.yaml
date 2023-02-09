@@ -61,12 +61,12 @@ spec:
     cephClusterSpec:
       #mon:
       #  count: 2
-      network:
-        provider: host
-        connections:
-          compression:
-            # TODO: Test out enabling this on next cluster rebuild
-            enabled: false
+      #network:
+      #  provider: host
+      #  connections:
+      #    compression:
+      #      # TODO: Test out enabling this on next cluster rebuild
+      #      enabled: false
       crashCollector:
         disable: false
       dashboard:
