@@ -32,7 +32,7 @@ spec:
   values:
     monitoring:
       # TODO enable monitoring enabled: true
-      enabled: false
+      enabled: true
       # createPrometheusRules: true
       createPrometheusRules: false
     ingress:
@@ -61,8 +61,8 @@ spec:
     cephClusterSpec:
       #mon:
       #  count: 2
-      #network:
-      #  provider: host
+      network:
+        provider: host
       #  connections:
       #    compression:
       #      # TODO: Test out enabling this on next cluster rebuild
@@ -72,16 +72,16 @@ spec:
       dashboard:
         enabled: true
         urlPrefix: /
-        ssl: false
+        ssl: true
       storage:
-        useAllNodes: false
-        useAllDevices: false
+        useAllNodes: true
+        useAllDevices: true
         config:
           osdsPerDevice: "1"
-        nodes:
-          - name: server-pc
-            directories:
-              - path: /rook-storage
+        #nodes:
+        #  - name: server-pc
+        #    directories:
+        #      - path: /rook-storage
     cephBlockPools:
       - name: ceph-blockpool
         spec:
