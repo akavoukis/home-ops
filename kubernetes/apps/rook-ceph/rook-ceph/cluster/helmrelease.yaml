@@ -80,8 +80,9 @@ spec:
           osdsPerDevice: "1"
         nodes:
           - name: mini-pc
-            devices:
-              - name: /dev/disk/by-id/dm-name-vgubuntu-rook--ceph
+            logicalDevices:
+              - volume: rook-ceph
+                volumeGroup: vgubuntu
     cephBlockPools:
       - name: ceph-blockpool
         spec:
