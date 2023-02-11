@@ -81,7 +81,7 @@ spec:
         nodes:
           - name: mini-pc
             devices:
-              - name: /dev/vgubuntu/rook-ceph
+              - name: /dev/disk/by-id/dm-name-vgubuntu-rook--ceph
     cephBlockPools:
       - name: ceph-blockpool
         spec:
