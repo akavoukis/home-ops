@@ -54,10 +54,10 @@ spec:
               - *host-local
     toolbox:
       enabled: false
-    # configOverride: |
-    #   [global]
-    #   bdev_enable_discard = true
-    #   bdev_async_discard = true
+    configOverride: |
+      [global]
+      bdev_enable_discard = true
+      bdev_async_discard = true
     cephClusterSpec:
       #mon:
       #  count: 2
@@ -78,10 +78,10 @@ spec:
         useAllDevices: false
         config:
           osdsPerDevice: "1"
-        #nodes:
-        #  - name: server-pc
-        #    directories:
-        #      - path: /rook-storage
+        nodes:
+          - name: mini-pc
+            devices:
+              - name: /dev/vgubuntu/rook-ceph
     cephBlockPools:
       - name: ceph-blockpool
         spec:
