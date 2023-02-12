@@ -43,7 +43,7 @@ spec:
           hajimari.io/icon: mdi:chess-rook
           hajimari.io/enable: "true"
         hosts:
-          - host: &host "rook-ceph.${LOCAL_DOMAIN}"
+          - host: &host "rook-ceph.${SECRET_DOMAIN}"
             path: /
         tls:
           - hosts:
