@@ -59,7 +59,7 @@ spec:
       bdev_enable_discard = true
       bdev_async_discard = true
     cephClusterSpec:
-      #mon:
+      # mon:
       #  count: 2
       network:
         provider: host
@@ -83,6 +83,35 @@ spec:
             logicalDevices:
               - volume: rook-ceph
                 volumeGroup: vgubuntu
+      resources:
+        api:
+          requests:
+            cpu: "50m"
+            memory: "512Mi"
+          limits:
+            cpu: "100m"
+            memory: "512Mi"
+        mgr:
+          requests:
+            cpu: "50m"
+            memory: "512Mi"
+          limits:
+            cpu: "100m"
+            memory: "512Mi"
+        mon:
+          requests:
+            cpu: "50m"
+            memory: "512Mi"
+          limits:
+            cpu: "100m"
+            memory: "512Mi"
+        osd:
+          requests:
+            cpu: "50m"
+            memory: "512Mi"
+          limits:
+            cpu: "100m"
+            memory: "512Mi"
     cephBlockPools:
       - name: ceph-blockpool
         spec:
