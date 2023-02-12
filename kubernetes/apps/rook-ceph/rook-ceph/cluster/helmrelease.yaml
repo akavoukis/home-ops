@@ -31,6 +31,7 @@ spec:
       namespace: rook-ceph
   values:
     monitoring:
+      # TODO enable monitoring enabled: true
       enabled: true
       # createPrometheusRules: true
       createPrometheusRules: false
@@ -41,9 +42,9 @@ spec:
           hajimari.io/appName: "Rook"
           hajimari.io/icon: mdi:chess-rook
           hajimari.io/enable: "true"
-        host:
-          name: &host "rook-ceph.${LOCAL_DOMAIN}"
-          path: /
+        hosts:
+          - host: &host "rook-ceph.${LOCAL_DOMAIN}"
+            path: /
         tls:
           - hosts:
               - *host
