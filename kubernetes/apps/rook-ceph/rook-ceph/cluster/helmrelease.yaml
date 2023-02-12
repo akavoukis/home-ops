@@ -43,11 +43,11 @@ spec:
           hajimari.io/icon: mdi:chess-rook
           hajimari.io/enable: "true"
         hosts:
-          - host: &host-local "{{ .Release.Name }}.${LOCAL_DOMAIN}"
+          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
-          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+          - host: &host-local "{{ .Release.Name }}.${LOCAL_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
