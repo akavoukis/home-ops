@@ -43,15 +43,11 @@ spec:
           hajimari.io/icon: mdi:chess-rook
           hajimari.io/enable: "true"
         hosts:
-          - host: &host-local "{{ .Release.Name }}.${LOCAL_DOMAIN}"
-            path: /
-          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+          - host: &host "rook-ceph.${SECRET_DOMAIN}"
             path: /
         tls:
           - hosts:
               - *host
-          - hosts:
-              - *host-local
     toolbox:
       enabled: false
     configOverride: |
