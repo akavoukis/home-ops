@@ -90,31 +90,31 @@ spec:
       resources:
         api:
           requests:
-            cpu: "50m"
+            cpu: "100m"
             memory: "512Mi"
           limits:
-            cpu: "100m"
+            cpu: "200m"
             memory: "512Mi"
         mgr:
           requests:
-            cpu: "50m"
+            cpu: "100m"
             memory: "512Mi"
           limits:
-            cpu: "100m"
+            cpu: "200m"
             memory: "512Mi"
         mon:
           requests:
-            cpu: "50m"
+            cpu: "100m"
             memory: "512Mi"
           limits:
-            cpu: "100m"
+            cpu: "200m"
             memory: "512Mi"
         osd:
           requests:
-            cpu: "50m"
+            cpu: "100m"
             memory: "512Mi"
           limits:
-            cpu: "100m"
+            cpu: "200m"
             memory: "512Mi"
     cephBlockPools:
       - name: ceph-blockpool
