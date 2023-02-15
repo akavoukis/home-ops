@@ -68,21 +68,21 @@ spec:
       healthCheck:
         daemonHealth:
           mon:
-            disabled: true
+            disabled: false
             interval: 45s
             timeout: 2h
           osd:
-            disabled: true
+            disabled: false
             interval: 60s
             timeout: 2h
           status:
-            disabled: true
+            disabled: false
             interval: 60s
             timeout: 2h
         # Change pod liveness probe, it works for all mon, mgr, and osd pods.
         livenessProbe:
           rgw:
-            disabled: true
+            disabled: false
             probe:
               failureThreshold: 120
               initialDelaySeconds: 7200
@@ -90,7 +90,7 @@ spec:
               successThreshold: 1
               timeoutSeconds: 60
           mds:
-            disabled: true
+            disabled: false
             probe:
               failureThreshold: 120
               initialDelaySeconds: 7200
@@ -98,7 +98,7 @@ spec:
               successThreshold: 1
               timeoutSeconds: 60
           mon:
-            disabled: true
+            disabled: false
             probe:
               failureThreshold: 120
               initialDelaySeconds: 7200
@@ -106,7 +106,7 @@ spec:
               successThreshold: 1
               timeoutSeconds: 60
           mgr:
-            disabled: true
+            disabled: false
             probe:
               failureThreshold: 120
               initialDelaySeconds: 7200
@@ -114,7 +114,7 @@ spec:
               successThreshold: 1
               timeoutSeconds: 60
           osd:
-            disabled: true
+            disabled: false
             probe:
               failureThreshold: 120
               initialDelaySeconds: 7200
