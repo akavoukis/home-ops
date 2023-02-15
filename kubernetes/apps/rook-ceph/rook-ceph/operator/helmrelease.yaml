@@ -41,6 +41,13 @@ spec:
         memory: 256Mi
     hostpathRequiresPrivileged: true
     csi:
+      kubeletDirPath: /var/lib/kubelet
+      enableCSIHostNetwork: true
+      pluginTolerations:
+        - effect: "NoExecute"
+          operator: "Exists"
+        - effect: "NoSchedule"
+          operator: "Exists"
       csiRBDProvisionerResource: |
         - name : csi-provisioner
           resource:
