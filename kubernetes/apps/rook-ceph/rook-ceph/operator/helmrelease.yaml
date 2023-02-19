@@ -34,11 +34,11 @@ spec:
       enabled: true
     resources:
       requests:
-        cpu: 10m
-        memory: 128Mi
+        cpu: 100m
+        memory: 512Mi
       limits:
-        cpu: 10m
-        memory: 256Mi
+        cpu: 200m
+        memory: 1024Mi
     hostpathRequiresPrivileged: true
     csi:
       kubeletDirPath: /var/lib/kubelet
@@ -48,154 +48,154 @@ spec:
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 256Mi
-              cpu: 100m
+              cpu: 50m
         - name : csi-resizer
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 256Mi
-              cpu: 100m
+              cpu: 50m
         - name : csi-attacher
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 256Mi
-              cpu: 100m
+              cpu: 50m
         - name : csi-snapshotter
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 256Mi
-              cpu: 100m
+              cpu: 50m
         - name : csi-rbdplugin
           resource:
             requests:
               memory: 512Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 1Gi
-              cpu: 100m
+              cpu: 50m
         - name : csi-omap-generator
           resource:
             requests:
               memory: 512Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 1Gi
-              cpu: 100m
+              cpu: 50m
         - name : liveness-prometheus
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 256Mi
-              cpu: 100m
+              cpu: 50m
       csiRBDPluginResource: |
         - name : driver-registrar
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 256Mi
-              cpu: 100m
+              cpu: 50m
         - name : csi-rbdplugin
           resource:
             requests:
               memory: 512Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 1Gi
-              cpu: 100m
+              cpu: 50m
         - name : liveness-prometheus
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 256Mi
-              cpu: 100m
+              cpu: 50m
       csiCephFSProvisionerResource: |
         - name : csi-provisioner
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 256Mi
-              cpu: 100m
+              cpu: 50m
         - name : csi-resizer
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 256Mi
-              cpu: 100m
+              cpu: 50m
         - name : csi-attacher
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 256Mi
-              cpu: 100m
+              cpu: 50m
         - name : csi-snapshotter
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 256Mi
-              cpu: 100m
+              cpu: 50m
         - name : csi-cephfsplugin
           resource:
             requests:
               memory: 512Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 1Gi
-              cpu: 100m
+              cpu: 50m
         - name : liveness-prometheus
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 256Mi
-              cpu: 100m
+              cpu: 50m
       csiCephFSPluginResource: |
         - name : driver-registrar
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 256Mi
-              cpu: 100m
+              cpu: 50m
         - name : csi-cephfsplugin
           resource:
             requests:
               memory: 512Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 1Gi
-              cpu: 100m
+              cpu: 50m
         - name : liveness-prometheus
           resource:
             requests:
               memory: 128Mi
-              cpu: 50m
+              cpu: 10m
             limits:
               memory: 256Mi
-              cpu: 100m
+              cpu: 50m
