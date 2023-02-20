@@ -84,9 +84,8 @@ spec:
           osdsPerDevice: "1"
         nodes:
           - name: mini-pc
-            logicalDevices:
-              - volume: rook-ceph
-                volumeGroup: vgubuntu
+            devices:
+              - name: "/dev/disk/by-id/dm-name-vgubuntu-rook--ceph"
       resources:
         api:
           requests:
