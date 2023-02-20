@@ -47,7 +47,7 @@ spec:
         - name : csi-provisioner
           resource:
             requests:
-              memory: 128Mi
+              memory: 64Mi
               cpu: 10m
             limits:
               memory: 256Mi
@@ -55,7 +55,7 @@ spec:
         - name : csi-resizer
           resource:
             requests:
-              memory: 128Mi
+              memory: 64Mi
               cpu: 10m
             limits:
               memory: 256Mi
@@ -63,7 +63,7 @@ spec:
         - name : csi-attacher
           resource:
             requests:
-              memory: 128Mi
+              memory: 64Mi
               cpu: 10m
             limits:
               memory: 256Mi
@@ -71,7 +71,7 @@ spec:
         - name : csi-snapshotter
           resource:
             requests:
-              memory: 128Mi
+              memory: 64Mi
               cpu: 10m
             limits:
               memory: 256Mi
@@ -79,7 +79,7 @@ spec:
         - name : csi-rbdplugin
           resource:
             requests:
-              memory: 512Mi
+              memory: 256Mi
               cpu: 10m
             limits:
               memory: 1Gi
@@ -87,7 +87,7 @@ spec:
         - name : csi-omap-generator
           resource:
             requests:
-              memory: 512Mi
+              memory: 256Mi
               cpu: 10m
             limits:
               memory: 1Gi
@@ -95,7 +95,7 @@ spec:
         - name : liveness-prometheus
           resource:
             requests:
-              memory: 128Mi
+              memory: 64Mi
               cpu: 10m
             limits:
               memory: 256Mi
@@ -104,7 +104,7 @@ spec:
         - name : driver-registrar
           resource:
             requests:
-              memory: 128Mi
+              memory: 64Mi
               cpu: 10m
             limits:
               memory: 256Mi
@@ -112,7 +112,7 @@ spec:
         - name : csi-rbdplugin
           resource:
             requests:
-              memory: 512Mi
+              memory: 256Mi
               cpu: 10m
             limits:
               memory: 1Gi
@@ -120,7 +120,7 @@ spec:
         - name : liveness-prometheus
           resource:
             requests:
-              memory: 128Mi
+              memory: 64Mi
               cpu: 10m
             limits:
               memory: 256Mi
@@ -129,7 +129,7 @@ spec:
         - name : csi-provisioner
           resource:
             requests:
-              memory: 128Mi
+              memory: 64Mi
               cpu: 10m
             limits:
               memory: 256Mi
@@ -137,7 +137,7 @@ spec:
         - name : csi-resizer
           resource:
             requests:
-              memory: 128Mi
+              memory: 64Mi
               cpu: 10m
             limits:
               memory: 256Mi
@@ -145,7 +145,7 @@ spec:
         - name : csi-attacher
           resource:
             requests:
-              memory: 128Mi
+              memory: 64Mi
               cpu: 10m
             limits:
               memory: 256Mi
@@ -153,7 +153,7 @@ spec:
         - name : csi-snapshotter
           resource:
             requests:
-              memory: 128Mi
+              memory: 64Mi
               cpu: 10m
             limits:
               memory: 256Mi
@@ -161,7 +161,7 @@ spec:
         - name : csi-cephfsplugin
           resource:
             requests:
-              memory: 512Mi
+              memory: 256Mi
               cpu: 10m
             limits:
               memory: 1Gi
@@ -169,7 +169,7 @@ spec:
         - name : liveness-prometheus
           resource:
             requests:
-              memory: 128Mi
+              memory: 64Mi
               cpu: 10m
             limits:
               memory: 256Mi
@@ -178,7 +178,7 @@ spec:
         - name : driver-registrar
           resource:
             requests:
-              memory: 128Mi
+              memory: 64Mi
               cpu: 10m
             limits:
               memory: 256Mi
@@ -186,7 +186,7 @@ spec:
         - name : csi-cephfsplugin
           resource:
             requests:
-              memory: 512Mi
+              memory: 256Mi
               cpu: 10m
             limits:
               memory: 1Gi
@@ -194,7 +194,7 @@ spec:
         - name : liveness-prometheus
           resource:
             requests:
-              memory: 128Mi
+              memory: 64Mi
               cpu: 10m
             limits:
               memory: 256Mi
