@@ -63,6 +63,10 @@ main() {
         # generate ansible settings
         envsubst < "${PROJECT_DIR}/tmpl/ansible/kube-vip.yml" \
             > "${PROJECT_DIR}/ansible/inventory/group_vars/kubernetes/kube-vip.yml"
+	# generate extra secrets
+        envsubst < "${PROJECT_DIR}/tmpl/kubernetes/radarr-secret.sops.yaml" \
+            > "${PROJECT_DIR}/kubernetes/apps/default/radarr/app/secret.sops.yaml"
+        sops --encrypt --in-place "${PROJECT_DIR}/kubernetes/apps/default/radarr/app/secret.sops.yaml"
         # generate ansible hosts file and secrets
         generate_ansible_hosts
         generate_ansible_host_secrets
