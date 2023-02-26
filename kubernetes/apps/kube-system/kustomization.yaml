@@ -2,10 +2,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - nvidia-device-plugin
   - ./namespace.yaml
   - ./kube-vip/ks.yaml
   - ./local-path-provisioner/ks.yaml
   - ./metrics-server/ks.yaml
   - ./reloader/ks.yaml
+  - ./nvidia-device-plugin/ks.yaml
 # - ./csi-driver-nfs/ks.yaml
