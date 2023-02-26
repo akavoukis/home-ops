@@ -16,3 +16,5 @@ resources:
   - ./weave-gitops.yaml
   - ./csi-driver-nfs.yaml
   - ./rook-ceph.yaml
+  - ./nvidia-charts.yaml
+  - ./nvdp-charts.yaml
