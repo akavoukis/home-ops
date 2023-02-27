@@ -86,6 +86,9 @@ spec:
           - name: mini-pc
             devices:
               - name: "/dev/disk/by-id/dm-name-vgubuntu-rook--ceph"
+          - name: server-pc
+            devices:
+              - name: "/dev/disk/by-id/dm-name-vgubuntu-rook--ceph"
       resources:
         api:
           requests:
