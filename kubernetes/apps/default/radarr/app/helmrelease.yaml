@@ -111,3 +111,12 @@ spec:
         memory: 250Mi
       limits:
         memory: 2000Mi
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - key: arr
+                  operator: In
+                  values:
+                    - "true"
