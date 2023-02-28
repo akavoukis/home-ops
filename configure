@@ -67,6 +67,9 @@ main() {
         envsubst < "${PROJECT_DIR}/tmpl/kubernetes/radarr-secret.sops.yaml" \
             > "${PROJECT_DIR}/kubernetes/apps/default/radarr/app/secret.sops.yaml"
         sops --encrypt --in-place "${PROJECT_DIR}/kubernetes/apps/default/radarr/app/secret.sops.yaml"
+        envsubst < "${PROJECT_DIR}/tmpl/kubernetes/sonarr-secret.sops.yaml" \
+            > "${PROJECT_DIR}/kubernetes/apps/default/sonarr/app/secret.sops.yaml"
+        sops --encrypt --in-place "${PROJECT_DIR}/kubernetes/apps/default/sonarr/app/secret.sops.yaml"
         # generate ansible hosts file and secrets
         generate_ansible_hosts
         generate_ansible_host_secrets
