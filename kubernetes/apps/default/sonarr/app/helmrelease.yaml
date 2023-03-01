@@ -91,12 +91,24 @@ spec:
         labels:
           snapshot.home.arpa/enabled: "true"
     persistence:
-      # media:
-      #   enabled: true
-      #   type: nfs
-      #   server: expanse.turbo.ac
-      #   path: /eros/Media
-      #   mountPath: /media
+      series:
+        enabled: true
+        type: nfs
+        server: server-pc.lan
+        path: /mnt/media/Series
+        mountPath: /series
+      movies:
+        enabled: true
+        type: nfs
+        server: server-pc.lan
+        path: /mnt/media/Movies
+        mountPath: /movies
+      downloads:
+        enabled: true
+        type: nfs
+        server: server-pc.lan
+        path: /mnt/media/Downloads
+        mountPath: /downloads
       scripts:
         enabled: true
         type: configMap
