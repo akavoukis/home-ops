@@ -7,3 +7,4 @@ resources:
   - ./hajimari/ks.yaml
   - ./radarr/ks.yaml
   - ./sonarr/ks.yaml
+  - ./overseer/ks.yaml
