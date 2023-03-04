@@ -50,7 +50,7 @@ spec:
           external-dns.home.arpa/enabled: "true"
           hajimari.io/icon: mdi:eye-circle
         hosts:
-          - host: *host
+          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
