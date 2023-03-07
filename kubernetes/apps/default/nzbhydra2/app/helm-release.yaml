@@ -1,0 +1,63 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nzbhydra2
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://k8s-at-home.com/charts/
+      chart: nzbhydra2
+      version: 10.4.2
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    image:
+      repository: linuxserver/nzbhydra2
+      tag: 5.1.7
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: nginx
+        annotations:
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+          external-dns.home.arpa/enabled: "true"
+          hajimari.io/icon: mdi:cloud-download
+        hosts:
+          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
+          - host: &host-local "{{ .Release.Name }}.${LOCAL_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - hosts:
+              - *host
+          - hosts:
+              - *host-local
+    persistence:
+      config:
+        enabled: true
+        mountPath: /config
+        size: 100Mi
+    env:
+      TZ: "${TIMEZONE}"
+    probes:
+      liveness:
+        spec:
+          httpGet:
+            path: /actuator/health/ping
+      readiness:
+        spec:
+          httpGet:
+            path: /actuator/health/ping
+      startup:
+        spec:
+          httpGet:
+            path: /actuator/health/ping
