@@ -95,6 +95,11 @@ spec:
           - name: server-pc
             devices:
               - name: "/dev/disk/by-id/dm-name-vgubuntu-rook--ceph"
+      healthCheck:
+        livenessProbe:
+          mgr:
+            timeoutSeconds: 45
+            failureThreshold: 5
       resources:
         api:
           requests:
