@@ -5,13 +5,12 @@ metadata:
   name: rook-ceph-mgr-dashboard
   namespace: rook-ceph
   labels:
-    external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
-    external-dns.home.arpa/enabled: "true"
-    hajimari.io/appName: "Rook"
-    hajimari.io/icon: mdi:chess-rook
-    hajimari.io/enable: "true"
     app.kubernetes.io/instance: rook-ceph-mgr-dashboard
     app.kubernetes.io/name: rook-ceph-mgr-dashboard
+  annotations:
+    hajimari.io/appName: "Rook"
+    hajimari.io/icon: "mdi:chess-rook"
+    hajimari.io/enable: "true"
 spec:
   ingressClassName: "nginx"
   rules:
