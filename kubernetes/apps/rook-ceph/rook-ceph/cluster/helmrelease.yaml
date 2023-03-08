@@ -63,6 +63,11 @@ spec:
       bdev_enable_discard = true
       bdev_async_discard = true
     cephClusterSpec:
+      mgr:
+        count: 1
+        modules:
+          - name: pg_autoscaler
+            enabled: true
       # mon:
       #  count: 2
       network:
@@ -76,7 +81,8 @@ spec:
       dashboard:
         enabled: true
         urlPrefix: /
-        ssl: true
+        ssl: false
+        port: 8026
       storage:
         useAllNodes: false
         useAllDevices: false
