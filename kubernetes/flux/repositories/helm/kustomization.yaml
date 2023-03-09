@@ -18,3 +18,4 @@ resources:
   - ./rook-ceph.yaml
   - ./nvidia-charts.yaml
   - ./nvdp-charts.yaml
+  - ./k8s-at-home-chart.yaml
