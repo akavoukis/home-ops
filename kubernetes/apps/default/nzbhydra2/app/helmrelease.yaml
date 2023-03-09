@@ -41,7 +41,7 @@ spec:
       main:
         ports:
           http:
-            port: 5076
+            port: &port 5076
     ingress:
       main:
         enabled: true
@@ -73,18 +73,19 @@ spec:
         labels:
           snapshot.home.arpa/enabled: "true"
     probes:
-      liveness:
+      liveness: &probes
+        enabled: true
+        custom: true
         spec:
           httpGet:
             path: /actuator/health/ping
-      readiness:
-        spec:
-          httpGet:
-            path: /actuator/health/ping
-      startup:
-        spec:
-          httpGet:
-            path: /actuator/health/ping
+            port: *port
+          initialDelaySeconds: 10
+          periodSeconds: 20
+          timeoutSeconds: 10
+          failureThreshold: 3
+      readiness: &probes
+      startup: &probes
     affinity:
       nodeAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
