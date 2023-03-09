@@ -80,9 +80,9 @@ spec:
           httpGet:
             path: /actuator/health/ping
             port: *port
-          initialDelaySeconds: 10
-          periodSeconds: 20
-          timeoutSeconds: 10
+          initialDelaySeconds: 60
+          periodSeconds: 120
+          timeoutSeconds: 20
           failureThreshold: 3
       readiness: &probes
       startup: &probes
