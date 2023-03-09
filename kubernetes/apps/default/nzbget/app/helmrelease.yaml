@@ -46,19 +46,19 @@ spec:
         enabled: true
         type: nfs
         server: server-pc.lan
-        path: /mnt/media/Series
+        path: ${SERIES_PATH}
         mountPath: /series
       movies:
         enabled: true
         type: nfs
         server: server-pc.lan
-        path: /mnt/media/Movies
+        path: ${MOVIES_PATH}
         mountPath: /movies
       downloads:
         enabled: true
         type: nfs
         server: server-pc.lan
-        path: /mnt/media/Downloads
+        path: ${DOWNLOADS_PATH}
         mountPath: /downloads
     securityContext:
       runAsUser: ${NFS_USER_ID}

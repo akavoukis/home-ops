@@ -15,3 +15,6 @@ data:
   NFS_USER_ID: "1000"
   NFS_GROUP_ID: "1000"
   SMB_GROUP_ID: "135"
+  SERIES_PATH: "/mnt/media/Series"
+  MOVIES_PATH: "/mnt/media/Movies"
+  DOWNLOADS_PATH: "/mnt/media/Downloads"
