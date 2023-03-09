@@ -43,7 +43,7 @@ tasks:
   pods:
     desc: List all the pods in your cluster
     cmds:
-      - kubectl get pods {{.CLI_ARGS | default "-A"}}
+      - kubectl get pods -o wide {{.CLI_ARGS | default "-A"}}
 
   kustomizations:
     desc: List all the kustomizations in your cluster
@@ -76,6 +76,11 @@ tasks:
     cmds:
       - kubectl get ingress {{.CLI_ARGS | default "-A"}}
 
+  services:
+    desc: List all the services in your cluster
+    cmds:
+      - kubectl get service {{.CLI_ARGS | default "-A"}}
+
   rook-ceph-toolbox:
     desc: Exec into the Rook Ceph toolbox
     cmds:
@@ -92,4 +97,5 @@ tasks:
       - task: gitrepositories
       - task: certificates
       - task: ingresses
+      - task: services
       - task: pods
