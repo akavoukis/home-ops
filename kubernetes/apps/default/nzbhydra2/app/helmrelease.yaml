@@ -72,6 +72,20 @@ spec:
         storageClass: ceph-block
         labels:
           snapshot.home.arpa/enabled: "true"
+    probes:
+      liveness: &probes
+        enabled: true
+        custom: true
+        spec:
+          httpGet:
+            path: /actuator/health/ping
+            port: *port
+          initialDelaySeconds: 120
+          periodSeconds: 120
+          timeoutSeconds: 20
+          failureThreshold: 3
+      readiness: &probes
+      startup: &probes
     affinity:
       nodeAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
