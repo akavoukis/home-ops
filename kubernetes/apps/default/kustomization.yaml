@@ -10,4 +10,4 @@ resources:
   - ./overseerr/ks.yaml
   - ./bazarr/ks.yaml
     #  - ./nzbhydra2/ks.yaml
-    #  - ./nzbget/ks.yaml
+  - ./nzbget/ks.yaml
