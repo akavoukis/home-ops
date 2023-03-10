@@ -29,7 +29,7 @@ spec:
     keepHistory: false
   values:
     controller:
-      type: RollingUpdate
+      type: statefulset
       annotations:
         reloader.stakater.com/auto: "true"
     image:
@@ -80,7 +80,7 @@ spec:
           httpGet:
             path: /actuator/health/ping
             port: *port
-          initialDelaySeconds: 200
+          initialDelaySeconds: 120
           periodSeconds: 120
           timeoutSeconds: 20
           failureThreshold: 3
