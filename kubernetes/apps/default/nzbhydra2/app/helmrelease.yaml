@@ -72,43 +72,6 @@ spec:
         storageClass: ceph-block
         labels:
           snapshot.home.arpa/enabled: "true"
-    probes:
-# -- Configures the probes for the main Pod.
-# @default -- See values.yaml
-probes:
-  liveness:
-    custom: true
-    enabled: true
-    spec:
-      failureThreshold: 5
-      httpGet:
-        path: /actuator/health/livenessState
-        port: *port
-      initialDelaySeconds: 60
-      periodSeconds: 10
-      timeoutSeconds: 10
-  readiness:
-    custom: true
-    enabled: true
-    spec:
-      failureThreshold: 5
-      httpGet:
-        path: /actuator/health/readinessState
-        port: *port
-      initialDelaySeconds: 60
-      periodSeconds: 10
-      timeoutSeconds: 10
-  startup:
-    custom: true
-    enabled: true
-    spec:
-      failureThreshold: 5
-      httpGet:
-        path: /actuator/health/readinessState
-        port: *port
-      initialDelaySeconds: 60
-      periodSeconds: 10
-      timeoutSeconds: 10
     affinity:
       nodeAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
