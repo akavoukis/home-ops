@@ -79,7 +79,7 @@ spec:
         spec:
           failureThreshold: 5
           httpGet:
-            path: /actuator/health/livenessState
+            path: /actuator/health/ping
             port: *port
           initialDelaySeconds: 300
           periodSeconds: 10
@@ -90,7 +90,7 @@ spec:
         spec:
           failureThreshold: 5
           httpGet:
-            path: /actuator/health/readinessState
+            path: /actuator/health/ping
             port: *port
           initialDelaySeconds: 300
           periodSeconds: 10
@@ -101,7 +101,7 @@ spec:
         spec:
           failureThreshold: 5
           httpGet:
-            path: /actuator/health/readinessState
+            path: /actuator/health/ping
             port: *port
           initialDelaySeconds: 300
           periodSeconds: 10
