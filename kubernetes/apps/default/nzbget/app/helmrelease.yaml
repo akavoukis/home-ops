@@ -35,6 +35,7 @@ spec:
     image:
       repository: ghcr.io/k8s-at-home/nzbget
       tag: v21.1
+      command: ["/bin/sh"]
     env:
       TZ: "${TIMEZONE}"
     ingress:
