@@ -35,7 +35,6 @@ spec:
     image:
       repository: ghcr.io/k8s-at-home/nzbget
       tag: v21.1
-      command: ["/bin/sh"]
     env:
       TZ: "${TIMEZONE}"
     ingress:
@@ -60,6 +59,12 @@ spec:
               - *host
           - hosts:
               - *host-local
+    podSecurityContext:
+      runAsUser: 568
+      runAsGroup: 568
+      fsGroup: 568
+      fsGroupChangePolicy: "OnRootMismatch"
+      supplementalGroups: [10000]
     volumeClaimTemplates:
       - name: config
         mountPath: /config
