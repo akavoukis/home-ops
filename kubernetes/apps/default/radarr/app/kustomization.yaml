@@ -9,9 +9,12 @@ resources:
   - ./secret.sops.yaml
   # - ./volsync.yaml
 configMapGenerator:
-  - name: radarr-configmap
+  - name: radarr-configmap-pushover
     files:
       - ./scripts/pushover-notify.sh
+  - name: radarr-configmap-alexa
+    files:
+      - ./scripts/alexa-notifier.sh
 generatorOptions:
   disableNameSuffixHash: true
   annotations:

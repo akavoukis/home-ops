@@ -109,12 +109,20 @@ spec:
         server: server-pc.lan
         path: ${DOWNLOADS_PATH}
         mountPath: /downloads
-      scripts:
+      pushover-notify:
         enabled: true
         type: configMap
-        name: radarr-configmap
+        name: radarr-configmap-pushover
         subPath: pushover-notify.sh
         mountPath: /scripts/pushover-notify.sh
+        defaultMode: 0775
+        readOnly: true
+      alexa-notify:
+        enabled: true
+        type: configMap
+        name: radarr-configmap-alexa
+        subPath: alexa-notify.sh
+        mountPath: /scripts/alexa-notifier.sh
         defaultMode: 0775
         readOnly: true
     resources:
