@@ -121,7 +121,7 @@ spec:
         enabled: true
         type: configMap
         name: radarr-configmap-alexa
-        subPath: alexa-notify.sh
+        subPath: alexa-notifier.sh
         mountPath: /scripts/alexa-notifier.sh
         defaultMode: 0775
         readOnly: true
