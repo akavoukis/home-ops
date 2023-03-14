@@ -38,6 +38,7 @@ spec:
       TZ: ${TIMEZONE}
       PUSHOVER_DEBUG: "false"
       PUSHOVER_APP_URL: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+      PUSHOVER_PRIORITY: 0
       SONARR__INSTANCE_NAME: Sonarr
       SONARR__PORT: &port 80
       SONARR__APPLICATION_URL: "https://{{ .Release.Name }}.${SECRET_DOMAIN}"
@@ -112,7 +113,7 @@ spec:
       pushover-notify:
         enabled: true
         type: configMap
-        name: radarr-configmap-pushover
+        name: sonarr-configmap-pushover
         subPath: pushover-notify.sh
         mountPath: /scripts/pushover-notify.sh
         defaultMode: 0775
@@ -120,7 +121,7 @@ spec:
       alexa-notify:
         enabled: true
         type: configMap
-        name: radarr-configmap-alexa
+        name: sonarr-configmap-alexa
         subPath: alexa-notifier.sh
         mountPath: /scripts/alexa-notifier.sh
         defaultMode: 0775
