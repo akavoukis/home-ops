@@ -43,6 +43,7 @@ spec:
       SONARR__PORT: &port 80
       SONARR__APPLICATION_URL: "https://{{ .Release.Name }}.${SECRET_DOMAIN}"
       SONARR__LOG_LEVEL: info
+      SONARR__URL_BASE: "{{ .Release.Name }}.${LOCAL_DOMAIN}"
     envFrom:
       - secretRef:
           name: sonarr-secret
