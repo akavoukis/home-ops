@@ -11,4 +11,4 @@ resources:
   - ./bazarr/ks.yaml
   - ./nzbhydra2/ks.yaml
   - ./nzbget/ks.yaml
-  - ./redis/ks.yaml
+    #  - ./redis/ks.yaml
