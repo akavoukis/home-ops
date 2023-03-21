@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: glauth-secret
+    namespace: default
+type: Opaque
+# Create passbcrypt:
+#   https://gchq.github.io/CyberChef/#recipe=Bcrypt(12)To_Hex('None',0)
+# or
+#   htpasswd -bnBC 10 "" YOUR_PASSWORD | tr -d ':\n' | od -A n -t x1 | sed 's/ *//g' | tr -d '\n'
+stringData:
+    server.toml: ENC[AES256_GCM,data:hIBt6GsBL3Yq3vWZkOYXjm8QsMhPscFGFaZSPO25dxs+RPHIg0shxbiccPG+Gvskoco3hXlOSSL8IEaZIArp/hApB6K1bH0Sx/hQKvv8WOUnyQtALYSiA/zFkAorm8+PfLE4D40NH6x6/7wYqGerKzmpa+H3n+gIzp8jrc5DtTbWlZ2ZdZ7vlAzsqCVCHNq1w8lOuzo60f9QRLC3v1xkrzhB0XKHsq6IWqzW6N9NVjuMkEX0gMDO4i6w+uhorqSRznP/mmU/F+8T1QXcXtDJOpc9GLB1yaHF2UzXGIeeumThyP2fHw==,iv:tm8NGO5DMOFH/9SksrHoAQP1raXZVsQwHrgMnTklGxc=,tag:wpmjA8iSJz9A/a7lA5jqMw==,type:str]
+    groups.toml: ENC[AES256_GCM,data:L3ux1/ItVpu86VaLNiTXF4QwjPB7C3PXgpvZs9WwtiBHBgMi8B+9rpI7YcCtVLSo0urllwHREBfIEiFSoewZ/wZlpoc2ReOQPJ7d8367Yxe9FhIj0ejODVAQDUciO6f04nIh0jVnvAkGkbtO8gfQQioQIX7XP30cKRiaA9qw5qVy3yULTHE/awNFhaj0W95hp3HGDCueG7t0vsHUuu8=,iv:puUs0RF0rHyUbivXtAYa6Zfxs308AWslonPD8lOYLRw=,tag:bJdUMORuJ3nYTY1Hsqetfg==,type:str]
+    users.toml: ENC[AES256_GCM,data:ZUAyp7bA6LmjRR3dyj5PmXQl+sqv4otoUBN+Atj3ZCIbTayV4/XmLHqWQ/WKtAzI35egZwlzDu9F752k5OiAt4mOD+cnExBjdovu8zp23uuqYYybhw5wIraJXasHLYbnT5QXIhiN/9AVkgtRjKWii43Fo60zZrVGWv/UQA0rLem5HXI4FsAsfr031Ixtrg+T4gPPJp/gDama1hQqwqokOSrrsVrcNVXALDEFovMfAuIYrNAlXg8RTfpgh7jt1elct7woQgNAoWUO7iWs36LvJCsdj0TIdaNn8/oOggx3IGhenHlYOzTib5TNPD1mzIQ/VUVkdt73zoYn4B/f6DdNQ5g4JCugBf0MDxcQnWsGqZw9iQlvW6OwnBkpI7oYCz7/NQjfw1IC1xZG81mTV5g/ESuovJNH6UHL2EcqY47/7f1PnC4Kk43/CfpJ0s/+JfSPV1DfYDQBFziTOd3vSRue+JPrywJd7klxeH1Mfywp5hNkU1VHNe25VPpAytaXEYmQAG3c1dxyedWPQ4PWCWEdvUtYx06GCgH6gIwmowq5NsZPLknLVFkGY6MHkae58b/Ub5WVKCQ1rCnChgKr5tw3RWXaV0vuZiGcCw2LrHN58bsBDkOue7XaiIMgOgbmIoiYQNfQc+r+Rbg4XhDdrpjFV30akr6Nk/cd9LW3nlv9gG7kRNsaOHpqKCUiYeKW8dYmX/FzpEPdXZwpaURdMTHYTluxTOCguQ85gEYTG4Sw+Hqsbq0mMJzr/VwlO/PANH0IgV7unGM476rB7PwZcI9NMpMXad1mAee2,iv:WaJsz8C+wzV/nzVrH5R37nRfwbmOKGHy0oXNZ+bv01w=,tag:D93XYAosagp7U6JDJfABBg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1ucwgq79cuef750zcj9xl0j6w5yq9pz3kj96htc54n0v48335egds6s3ysy
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBjMnUxZGw4N2N4ZjYwQjFC
+            NlZqbjQrYmFTQVBGSnR5aXZnYzA5Q3R5VnpjClJ5ZjNRK3kvSXdtLzVMV2xEbGtE
+            eDdnWUU1TXBpZEh5clhuUDNCOS9nR28KLS0tIFVWK1BmcTIzM2lMZmk3bFpsM21B
+            eW5KOXhmRUs2Tk9mY0ZjVDFRYnpRdDAKvBX9PWRazgmVXhvQx5xReeI1Ets6Op1B
+            KeHOtYWojJxQJueasSArx9k0Vq8xgZmLb9KosRdiO4YIAcDZLwdSig==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-03-21T13:05:05Z"
+    mac: ENC[AES256_GCM,data:HeaCGzbYS0o11p8Aby8+XCou19ql7B+47iil/TMzt6iOrirNV5OgQBaagM7qhVPcezDuhLK3KDfAGljt372FfOmyWv+KBkPIk0HlMv6s9C9x8C/VZI7XzoDXpuhvRbEPAgJ1SvIRZsyL31eSi9FifzwilL3AWMWFbdk7CAWZL54=,iv:YBXjkHmmwMTbACxckdW7DkgkucOTcxTySGX0gGIqS1o=,tag:PUw5JU9U3NH5e2L5a49hxg==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3

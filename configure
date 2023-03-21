@@ -70,6 +70,9 @@ main() {
         envsubst < "${PROJECT_DIR}/tmpl/kubernetes/sonarr-secret.sops.yaml" \
             > "${PROJECT_DIR}/kubernetes/apps/default/sonarr/app/secret.sops.yaml"
         sops --encrypt --in-place "${PROJECT_DIR}/kubernetes/apps/default/sonarr/app/secret.sops.yaml"
+        envsubst < "${PROJECT_DIR}/tmpl/kubernetes/glauth-config.sops.yaml" \
+            > "${PROJECT_DIR}/kubernetes/apps/default/glauth/app/glauth-config.sops.yaml"
+        sops --encrypt --in-place "${PROJECT_DIR}/kubernetes/apps/default/glauth/app/glauth-config.sops.yaml"
         # generate ansible hosts file and secrets
         generate_ansible_hosts
         generate_ansible_host_secrets
