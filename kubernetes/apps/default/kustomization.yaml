@@ -12,3 +12,4 @@ resources:
   - ./nzbhydra2/ks.yaml
   - ./nzbget/ks.yaml
   - ./redis/ks.yaml
+  - ./glauth/ks.yaml
