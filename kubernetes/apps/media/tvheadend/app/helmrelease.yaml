@@ -62,8 +62,10 @@ spec:
           - hosts:
               - *host
     securityContext:
-      seLinuxOptions:
-        level: s0
+      privileged: true
+    #securityContext:
+    #  seLinuxOptions:
+    #    level: s0
     podSecurityContext:
       runAsUser: 568
       runAsGroup: 568
@@ -84,6 +86,7 @@ spec:
       dvb:
         enabled: true
         type: hostPath
+        mountPath: /dev/dvb
         hostPath: /dev/dvb
       # recordings:
       #   enabled: true
