@@ -31,6 +31,10 @@ spec:
       TZ: ${TIMEZONE}
     service:
       main:
+        type: LoadBalancer
+        externalIPs:
+          - "${SVC_TVHEADEND_ADDR}"
+        externalTrafficPolicy: Local
         ports:
           http:
             port: 9981
@@ -114,5 +118,5 @@ spec:
         memory: 20Mi
       limits:
         # gpu.intel.com/i915: 1
-        cpu: 1000m
-        memory: 1096Mi
+        cpu: 2000m
+        memory: 2096Mi
