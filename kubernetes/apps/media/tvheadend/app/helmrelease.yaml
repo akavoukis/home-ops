@@ -65,6 +65,8 @@ spec:
         tls:
           - hosts:
               - *host
+          - hosts:
+              - *host-local
     securityContext:
       privileged: true
     #securityContext:
