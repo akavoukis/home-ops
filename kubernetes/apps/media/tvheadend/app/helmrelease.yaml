@@ -67,9 +67,9 @@ spec:
     #  seLinuxOptions:
     #    level: s0
     podSecurityContext:
-      runAsUser: 568
-      runAsGroup: 568
-      fsGroup: 568
+      runAsUser: 1000
+      runAsGroup: 1000
+      fsGroup: 1000
       fsGroupChangePolicy: "OnRootMismatch"
       supplementalGroups:
         - 44
@@ -88,14 +88,12 @@ spec:
         type: hostPath
         mountPath: /dev/dvb
         hostPath: /dev/dvb
-      # recordings:
-      #   enabled: true
-      #   existingClaim: media-v2
-      #   mountPath: /recordings
-      # timeshift:
-      #   enabled: true
-      #   type: emptyDir
-      #   mountPath: /timeshift
+      recordings:
+        enabled: true
+        type: nfs
+        server: server-pc.lan
+        path: /mnt/media/recordings
+        mountPath: /recordings
     resources:
       requests:
         # gpu.intel.com/i915: 1
