@@ -39,11 +39,10 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: "nginx"
+        ingressClassName: nginx
         annotations:
-          cert-manager.io/cluster-issuer: letsencrypt-production
           external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
-          hajimari.io/enable: "false"
+          hajimari.io/enable: "true"
           hajimari.io/icon: "television"
           hajimari.io/group: "media"
           nginx.ingress.kubernetes.io/configuration-snippet: |
@@ -54,11 +53,11 @@ spec:
             proxy_set_header Upgrade $http_upgrade;
             proxy_set_header Connection "Upgrade";
         hosts:
-          - host: &host-local "tvheadend.${LOCAL_DOMAIN}"
+          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
-          - host: &host "tvheadend.${SECRET_DOMAIN}"
+          - host: &host-local "{{ .Release.Name }}.${LOCAL_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
