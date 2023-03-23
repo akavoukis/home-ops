@@ -94,6 +94,11 @@ spec:
         type: hostPath
         mountPath: /dev/dvb
         hostPath: /dev/dvb
+      dri:
+        enabled: true
+        type: hostPath
+        mountPath: /dev/dri
+        hostPath: /dev/dri
       # recordings:
       #   enabled: true
       #   existingClaim: media-v2
