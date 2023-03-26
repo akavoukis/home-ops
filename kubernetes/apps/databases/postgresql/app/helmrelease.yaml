@@ -23,10 +23,6 @@ spec:
     remediation:
       retries: 3
   values:
-    image:
-      registry: quay.io
-      repository: bitnami/postgresql
-      tag: 14.7.0
     postgresqlUsername: ${SECRET_POSTGRES_USERNAME}
     postgresqlPassword: ${SECRET_POSTGRES_PASSWORD}
     postgresqlDatabase: postgres
