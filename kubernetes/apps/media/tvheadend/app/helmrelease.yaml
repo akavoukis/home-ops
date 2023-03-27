@@ -117,6 +117,15 @@ spec:
       #   enabled: true
       #   type: emptyDir
       #   mountPath: /timeshift
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - key: hostname
+                  operator: In
+                  values:
+                    - "tv-server"
     resources:
       requests:
         # gpu.intel.com/i915: 1
