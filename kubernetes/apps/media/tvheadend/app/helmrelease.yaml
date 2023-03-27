@@ -77,9 +77,9 @@ spec:
     #  seLinuxOptions:
     #    level: s0
     podSecurityContext:
-      runAsUser: 568
-      runAsGroup: 568
-      fsGroup: 568
+      runAsUser: 1000
+      runAsGroup: 1000
+      fsGroup: 1000
       fsGroupChangePolicy: "OnRootMismatch"
       supplementalGroups:
         - 44
@@ -103,6 +103,12 @@ spec:
         type: hostPath
         mountPath: /dev/dri
         hostPath: /dev/dri
+      downloads:
+        enabled: true
+        type: nfs
+        server: server-pc.lan
+        path: ${DOWNLOADS_PATH}
+        mountPath: /recordings
       # recordings:
       #   enabled: true
       #   existingClaim: media-v2
