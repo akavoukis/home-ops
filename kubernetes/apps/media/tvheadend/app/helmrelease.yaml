@@ -26,7 +26,7 @@ spec:
       nameOverride: *app
     image:
       repository: ghcr.io/onedr0p/tvheadend
-      tag: 4.3.9961@sha256:ed7928f9122fb563d56dbb916cbf3a627a1c4cd00969a67dcd31322c9539b8ba
+      tag: 4.3.9965@sha256:0218d4b139711cf4d972a504e2ed8ab3a5c1c8b445fe217ef4850ebb23fd80c6
     env:
       TZ: ${TIMEZONE}
     service:
