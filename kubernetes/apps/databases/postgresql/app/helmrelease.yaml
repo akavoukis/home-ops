@@ -22,14 +22,16 @@ spec:
   upgrade:
     remediation:
       retries: 3
+  uninstall:
+    keepHistory: false
   values:
-    postgresqlUsername: ${SECRET_POSTGRES_USERNAME}
-    postgresqlPassword: ${SECRET_POSTGRES_PASSWORD}
-    postgresqlDatabase: postgres
-    auth:
-      username: ${SECRET_POSTGRES_USERNAME}
-      password: ${SECRET_POSTGRES_PASSWORD}
-      database: postgres
+    global:
+      postgresql:
+        auth:
+          postgresPassword: "${SECRET_POSTGRES_PASSWORD}"
+          username: "${SECRET_POSTGRES_USERNAME}"
+          password: "${SECRET_POSTGRES_PASSWORD}"
+          database: postgres
     metrics:
       enabled: true
       serviceMonitor:
