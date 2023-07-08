@@ -34,7 +34,7 @@ spec:
         reloader.stakater.com/auto: "true"
     image:
       repository: linuxserver/nzbhydra2
-      tag: 5.1.8
+      tag: 5.1.9
     env:
       TZ: "${TIMEZONE}"
     service:
